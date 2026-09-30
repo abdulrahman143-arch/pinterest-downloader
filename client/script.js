@@ -1,3 +1,4 @@
+const API_URL = "https://pinterest-downloader-api.onrender.com";
 const button = document.getElementById("downloadButton");
 const input = document.getElementById("pinterestUrl");
 const status = document.getElementById("status");
@@ -59,7 +60,7 @@ button.addEventListener("click", async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/api/check-url",
+            "http://pinterest-downloader-api.onrender.com",
             {
                 method: "POST",
                 headers: {
