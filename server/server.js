@@ -18,14 +18,14 @@ function detectPlatform(url) {
 
         if (
             hostname === "pinterest.com" ||
-            hostname === "www.pinterest.com"
+            hostname.endsWith(".pinterest.com")
         ) {
             return "pinterest";
         }
 
         if (
             hostname === "instagram.com" ||
-            hostname === "www.instagram.com"
+            hostname.endsWith(".instagram.com")
         ) {
             if (parsedUrl.pathname.startsWith("/reel/")) {
                 return "instagram-reel";
@@ -35,6 +35,7 @@ function detectPlatform(url) {
         }
 
         return "unknown";
+
     } catch {
         return "invalid";
     }
